@@ -3,12 +3,8 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 
 def home(request):
-    a = request.GET.get('a')
-    b = request.GET.get('b')
-    if b == None:
-        b = 0
-    if a == None:
-        a = 0
+    a = request.GET.get('a', 0)
+    b = request.GET.get('b', 0)
     sum = int(a) + int(b)
     r = JsonResponse({'sum':sum})
 
