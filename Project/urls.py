@@ -1,8 +1,9 @@
 from django.urls import path
-from django.http import HttpResponse
-from django.http import JsonResponse
-from app.views import sum_num
+from app.views import sum_num,abaut,Hom,uy,helov
 
 urlpatterns = [
-    path('', sum_num)
+    path('', helov),
+    path('abaut/', abaut),
+    path('uy/', uy),
+    path('hom/', Hom)
 ]
