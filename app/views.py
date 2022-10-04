@@ -2,26 +2,22 @@ import json
 from django.http import HttpResponse
 from django.http import JsonResponse
 
-def sum_num(requets):
-    a = requets.body.decode()
-    dict = json.loads(a)
-    r = JsonResponse({'sum':dict['a'] + dict['b']})
-    return r
+def qush(requets):
+    body = requets.body.decode()
+    dict = json.loads(body)
+    return JsonResponse({'a+b':dict['a']+dict['b']})
 
-def sum_num(requets):
-    a = requets.body.decode()
-    dict = json.loads(a)
-    r = JsonResponse({'sum':dict['a'] + dict['b']})
-    return r
+def ayir(requets):
+    body = requets.body.decode()
+    dict = json.loads(body)
+    return JsonResponse({'a-b':dict['a']-dict['b']})
 
-def helov(requets):
-    return HttpResponse('<h1>Hellov</h1>')
+def kupaytir(requets):
+    body = requets.body.decode()
+    dict = json.loads(body)
+    return JsonResponse({'a*b':dict['a']*dict['b']})
 
-def Hom(requets):
-    return HttpResponse('<h1>Hom</h1>')
-
-def abaut(requets):
-    return HttpResponse('<h1>Abaut</h1>')
-
-def uy(requets):
-    return HttpResponse('<h1>Uy</h1>')
+def bul(requets):
+    body = requets.body.decode()
+    dict = json.loads(body)
+    return JsonResponse({'a:b':dict['a']/dict['b']})
